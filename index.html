@@ -70,5 +70,17 @@
         <span class="dot">•</span>
         <span>2026</span>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const roleRadios = document.querySelectorAll('.role-select input[type="radio"]');
+            roleRadios.forEach(radio => {
+                radio.addEventListener("change", (event) => {
+                    const parentLabel = event.target.closest('label');
+                    const selectedRole = parentLabel.textContent.trim();
+                    alert("Please enter your login details below");
+                });
+            });
+        });
+    </script>
   </body>
 </html>
