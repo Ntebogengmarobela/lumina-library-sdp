@@ -58,6 +58,7 @@ section {
     background-color: rgb(0, 0, 0);
     margin: auto;
     margin-top: 120px;
+    margin-bottom: 120px;
     /* height: 120px; */
     width: 650px;
 }
@@ -206,4 +207,36 @@ section {
     font-size: 18px;
 }
 
+footer {
+     display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  background-color: rgb(0, 0, 0);
+  /* border-bottom: 2px solid rgba(227, 228, 229, 0.6); */
+  height: 120px;
+  width: 100%;
+  box-sizing: border-box;
+  color: rgb(245, 222, 179);
+  margin: 0;
+}
 
+footer > span{
+    color: rgb(245, 222, 179);
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.material-icons-copy{
+    font-family: Material Icons;
+    color: rgb(245, 222, 179);
+    font-style: normal;
+}
+.dot {
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: bold;
+}
