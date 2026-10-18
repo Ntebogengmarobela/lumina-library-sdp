@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lumina Library - Resource & Member Management System RMMS</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/x-icon" href="images/library.png">
+    <link rel="icon" type="image/x-icon" href="images/library.png" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -13,12 +13,55 @@
   </head>
   <body>
     <header>
-        <img src="images/bookshelf.png" alt="">
+      <img src="images/bookshelf.png" alt="" />
       <!-- <img src="images/hdbookstack.png" alt="" /> -->
       <h1 class="prjt-title">Lumina Library</h1>
     </header>
     <main>
-    
+      <section class="login-box">
+        <h1>Access Hub</h1>
+        <i class="material-icons-account">account_circle</i>
+        <h2>Select your role:</h2>
+        <section class="role-select">
+          <label>
+            <input type="radio" name="role" />
+            Librarian
+          </label>
+           <label>
+            <input type="radio" name="role"/>
+            Admin
+        </label>
+      </section>
+      <section class="login-detail">
+        <section class="login-sec-row">
+            <form action="">
+            <i class="material-icons-login">alternate_email</i>
+            <!-- <span>Username:</span> -->
+            <input type="text" placeholder="Enter Username:">
+        </form>
+        </section>
+         <section class="login-sec-row">
+            <form action="">
+            <i class="material-icons-login">lock</i>
+            <!-- <span>Password:</span> -->
+            <input type="text" placeholder="Enter Password:">
+        </form>
+        </section>
+        <section class="login-btn">
+            <button>
+                Login
+                <i class="material-icons">login</i>
+            </button>
+        </section>
+        <section class="frgt-pass">
+            <span>Forgot password?</span>
+        </section>
+        <section class="register-btn">
+            <button>Sign Up
+                <i class="material-icons">app_registration</i>
+            </button>
+        </section>
+      </section>
     </main>
   </body>
 </html>
