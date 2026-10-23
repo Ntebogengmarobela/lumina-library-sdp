@@ -1,0 +1,32 @@
+{
+  "name": "lumina-library-sdp",
+  "version": "1.0.0",
+  "description": "**[Live Demo](https://lumina-library-sdp.netlify.app/)**  **[GitHub Repository](https://github.com/Ntebogengmarobela/lumina-library-sdp.git)**",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ntebogengmarobela/lumina-library-sdp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ntebogengmarobela/lumina-library-sdp/issues"
+  },
+  "homepage": "https://github.com/Ntebogengmarobela/lumina-library-sdp#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "sqlite3": "^6.0.1"
+  },
+  "allowScripts": {
+    "sqlite3@6.0.1": true
+  }
+}

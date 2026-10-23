@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dahboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="images/library.png" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <img src="images/hdbookstack.png" alt="Lumina Library logo" />
+      <h1 class="prjt-title">Lumina Library</h1>
+
+      <section class="header-right">
+        <section class="account-type-sec">
+          <i class="material-icons-account">account_circle</i>
+          <span class="role-type">Admin</span>
+        </section>
+        <a href="/index.html">
+          <button class="logout-btn" type="submit">
+            Logout
+            <i class="material-icons" aria-hidden="true">login</i>
+          </button>
+        </a>
+      </section>
+    </header>
+    <main>
+      <section class="login-box">
+        <h1>Book & Membership Hub</h1>
+        <section class="search-module-container">
+          <section class="search-controls-wrapper">
+            <section class="search-tabs">
+              <button
+                class="tab-btn active"
+                onclick="switchSearchMode('books')"
+              >
+                <i class="material-icons">book</i> Search Books
+              </button>
+              <button class="tab-btn" onclick="switchSearchMode('members')">
+                <i class="material-icons">people</i> Search Members
+              </button>
+            </section>
+
+            <section class="search-input-field">
+              <i class="material-icons">search</i>
+              <input
+                type="text"
+                id="dashboardSearchInput"
+                oninput="executeLiveSearchSearch()"
+                placeholder="Search titles, authors, ISBN numbers..."
+              />
+            </section>
+          </section>
+
+          <section
+            class="results-display-panel"
+            id="searchResultsContainer"
+          ></section>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <span>
+        Lumina Library - Resource & Member Management System RMMS &copy;
+      </span>
+      <span class="dot">•</span>
+      <span>All Rights Reserved</span>
+      <span class="dot">•</span>
+      <span>2026</span>
+    </footer>
+    <script src="index.js" defer></script>
+  </body>
+</html>

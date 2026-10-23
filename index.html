@@ -1,86 +1,231 @@
+
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lumina Library - Resource & Member Management System RMMS</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/x-icon" href="images/library.png" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <img src="images/hdbookstack.png" alt="" />
-      <!-- <img src="images/hdbookstack.png" alt="" /> -->
-      <h1 class="prjt-title">Lumina Library</h1>
-    </header>
-    <main>
-      <section class="login-box">
-        <h1>Access Hub</h1>
-        <i class="material-icons-account">account_circle</i>
-        <h2>Select your role:</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lumina Library - Resource & Member Management System RMMS</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="images/library.png" />
+
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <header>
+    <img src="images/hdbookstack.png" alt="Lumina Library logo" />
+    <h1 class="prjt-title">Lumina Library</h1>
+  </header>
+
+  <main>
+    <section class="login-box">
+      <h1>Access Hub</h1>
+      <i class="material-icons-account" aria-hidden="true">
+        account_circle
+      </i>
+
+      <h2>Select your role:</h2>
+
+      <form id="loginForm">
         <section class="role-select">
           <label>
-            <input type="radio" name="role" />
+            <input
+              type="radio"
+              name="role"
+              value="librarian"
+              required
+            />
             Librarian
           </label>
-           <label>
-            <input type="radio" name="role"/>
+
+          <label>
+            <input
+              type="radio"
+              name="role"
+              value="admin"
+              required
+            />
             Admin
-        </label>
-      </section>
-      <section class="login-detail">
-        <section class="login-sec-row">
-            <form action="">
-            <i class="material-icons-login">alternate_email</i>
-            <!-- <span>Username:</span> -->
-            <input type="text" placeholder="Enter Username:">
-        </form>
+          </label>
         </section>
-         <section class="login-sec-row">
-            <form action="">
-            <i class="material-icons-login">lock</i>
-            <!-- <span>Password:</span> -->
-            <input type="text" placeholder="Enter Password:">
-        </form>
-        </section>
-        <section class="login-btn">
-            <button>
-                Login
-                <i class="material-icons">login</i>
+
+        <section class="login-detail">
+          <section class="login-sec-row">
+            <i class="material-icons-login" aria-hidden="true">
+              alternate_email
+            </i>
+
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter Username"
+              autocomplete="username"
+              required
+            />
+          </section>
+
+          <section class="login-sec-row">
+            <i class="material-icons-login" aria-hidden="true">
+              lock
+            </i>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter Password"
+              autocomplete="current-password"
+              required
+            />
+          </section>
+
+          <p
+            id="loginMessage"
+            role="alert"
+            aria-live="polite"
+          ></p>
+
+          <section class="login-btn">
+            <button type="submit" id="loginButton">
+              Login
+              <i class="material-icons" aria-hidden="true">login</i>
             </button>
+          </section>
+
+          <section class="frgt-pass">
+            <a href="/forgot-password.html">Forgot password?</a>
+          </section>
+
+          <section class="register-btn">
+            <a href="/sign-up.html" class="register-link">
+              Sign Up
+              <i class="material-icons" aria-hidden="true">
+                app_registration
+              </i>
+            </a>
+          </section>
         </section>
-        <section class="frgt-pass">
-            <span>Forgot password?</span>
-        </section>
-        <section class="register-btn">
-            <button>Sign Up
-                <i class="material-icons">app_registration</i>
-            </button>
-        </section>
-      </section>
-    </main>
-    <footer>
-        <span>Lumina Library - Resource & Member Management System RMMS &copy;</span> 
-        <span class="dot">•</span>
-        <span>All Rights Reserved</span>
-        <span class="dot">•</span>
-        <span>2026</span>
-    </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const roleRadios = document.querySelectorAll('.role-select input[type="radio"]');
-            roleRadios.forEach(radio => {
-                radio.addEventListener("change", (event) => {
-                    const parentLabel = event.target.closest('label');
-                    const selectedRole = parentLabel.textContent.trim();
-                    alert("Please enter your login details below");
-                });
-            });
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span>
+      Lumina Library - Resource & Member Management System RMMS &copy;
+    </span>
+    <span class="dot">•</span>
+    <span>All Rights Reserved</span>
+    <span class="dot">•</span>
+    <span>2026</span>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginForm = document.getElementById("loginForm");
+      const loginMessage = document.getElementById("loginMessage");
+      const loginButton = document.getElementById("loginButton");
+
+      const roleRadios = document.querySelectorAll(
+        '.role-select input[name="role"]'
+      );
+
+      roleRadios.forEach((radio) => {
+        radio.addEventListener("change", () => {
+          alert("Please enter your account details below");
         });
-    </script>
-  </body>
+      });
+
+      // Show a message after registration.
+      const params = new URLSearchParams(window.location.search);
+
+      if (params.get("registered") === "1") {
+        loginMessage.textContent =
+          "Registration successful! You can now log in.";
+      }
+
+      loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        loginMessage.textContent = "";
+
+        const selectedRole = loginForm.querySelector(
+          'input[name="role"]:checked'
+        );
+
+        if (!selectedRole) {
+          loginMessage.textContent = "Please select your role.";
+          return;
+        }
+
+        const username = document
+          .getElementById("username")
+          .value.trim();
+
+        const password = document
+          .getElementById("password")
+          .value;
+
+        if (!username || !password) {
+          loginMessage.textContent =
+            "Please enter your username and password.";
+          return;
+        }
+
+        loginButton.disabled = true;
+        loginButton.setAttribute("aria-busy", "true");
+
+        try {
+          const response = await fetch("/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            credentials: "same-origin",
+            body: JSON.stringify({
+              username: username,
+              password: password,
+              role: selectedRole.value
+            })
+          });
+
+          const result = await response.json();
+
+          if (!response.ok || !result.success) {
+            loginMessage.textContent =
+              result.message ||
+              "Login failed. Please check your details.";
+            return;
+          }
+
+          const allowedDestinations = [
+            "/admin-dashboard.html",
+            "/librarian-dashboard.html"
+          ];
+
+          if (!allowedDestinations.includes(result.redirect)) {
+            loginMessage.textContent =
+              "Invalid dashboard destination.";
+            return;
+          }
+
+          window.location.assign(result.redirect);
+        } catch (error) {
+          console.error("Login request failed:", error);
+
+          loginMessage.textContent =
+            "Cannot connect to the server. Please try again.";
+        } finally {
+          loginButton.disabled = false;
+          loginButton.removeAttribute("aria-busy");
+        }
+      });
+    });
+  </script>
+</body>
 </html>

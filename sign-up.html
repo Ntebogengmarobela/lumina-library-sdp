@@ -14,44 +14,59 @@
     <section class="login-box">
       <h1>Sign up</h1>
       <i class="material-icons-account">account_circle</i>
-      <h2>Sign Up as:</h2>
-      <section class="role-select">
-        <label>
-          <input type="radio" name="role" />
-          Librarian
-        </label>
-        <label>
-          <input type="radio" name="role" />
-          Admin
-        </label>
-      </section>
-      <section class="login-detail">
-        <section class="login-sec-row">
-          <form action="">
-            <i class="material-icons-login">badge</i>
-            <input type="text" placeholder="Enter Full Name:" />
-          </form>
+      
+      <form action="/submit-sign" method="POST">
+        
+        <h2>Sign Up as:</h2>
+        <section class="role-select">
+          <label>
+            <input type="radio" name="role" value="Librarian" required />
+            Librarian
+          </label>
+          <label>
+            <input type="radio" name="role" value="Admin" required />
+            Admin
+          </label>
         </section>
-        <section class="login-sec-row">
-          <form action="">
+        
+        <section class="login-detail">
+          <section class="login-sec-row">
+            <i class="material-icons-login">badge</i>
+            <input type="text" name="fullName" required placeholder="Enter Full Name:" />
+          </section>
+          
+          <section class="login-sec-row">
             <i class="material-icons-login">alternate_email</i>
-            <input type="text" placeholder="Enter Username:" />
-          </form>
+            <input type="text" name="username" required placeholder="Enter Username:" />
+          </section>
+
+          <section class="login-sec-row">
+            <i class="material-icons-login">lock</i>
+            <input type="password" name="password" required placeholder="Enter Password:" />
+          </section>
+          
+          <section class="register-btn">
+            <a href="/"></a>
+            <button type="submit" class="register-btn">
+              Sign Up
+              <i class="material-icons">app_registration</i>
+            </button>
+          </section>
         </section>
 
-        <section class="login-sec-row">
-          <form action="">
-            <i class="material-icons-login">lock</i>
-            <input type="text" placeholder="Enter Password:" />
-          </form>
-        </section>
-        <section class="register-btn">
-          <button>
-            Sign Up
-            <i class="material-icons">app_registration</i>
-          </button>
-        </section>
-      </section>
+      </form>
     </section>
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const roleRadios = document.querySelectorAll('.role-select input[type="radio"]');
+            roleRadios.forEach(radio => {
+                radio.addEventListener("change", (event) => {
+                    const parentLabel = event.target.closest('label');
+                    const selectedRole = parentLabel.textContent.trim();
+                    alert("Please enter your details below");
+                });
+            });
+        });
+    </script>
   </body>
 </html>
