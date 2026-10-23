@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Librarian Dashboard - Lumina Library</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="images/library.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <img src="images/hdbookstack.png" alt="Lumina Library logo">
+    <h1 class="prjt-title">Lumina Library</h1>
+     <section class="header-right">
+        <section class="account-type-sec">
+          <i class="material-icons-account">account_circle</i>
+          <span class="role-type">Libraian</span>
+        </section>
+        <a href="/index.html">
+          <button class="logout-btn" type="submit">
+            Logout
+            <i class="material-icons" aria-hidden="true">login</i>
+          </button>
+        </a>
+      </section>
+  </header>
+  <main>
+  <section class="login-box">
+    <h1>Library Management Hub</h1>
+
+    <section class="search-module-container">
+
+      <div class="search-controls-wrapper">
+
+        <div class="search-tabs">
+          <button class="tab-btn active" onclick="switchLibrarianTab('books')">
+            <i class="material-icons">book</i>
+            Manage Books
+          </button>
+
+          <button class="tab-btn" onclick="switchLibrarianTab('members')">
+            <i class="material-icons">people</i>
+            Manage Members
+          </button>
+
+          <button class="tab-btn" onclick="switchLibrarianTab('loans')">
+            <i class="material-icons">swap_horiz</i>
+            Loan Transactions
+          </button>
+
+          <button class="tab-btn" onclick="switchLibrarianTab('returns')">
+            <i class="material-icons">assignment_return</i>
+            Book Returns
+          </button>
+
+          <button class="tab-btn" onclick="switchLibrarianTab('fines')">
+            <i class="material-icons">payments</i>
+            Overdue Fines
+          </button>
+
+          <button class="tab-btn" onclick="switchLibrarianTab('search')">
+            <i class="material-icons">search</i>
+            Search Books
+          </button>
+
+          <button class="tab-btn" onclick="switchLibrarianTab('status')">
+            <i class="material-icons">inventory</i>
+            Book Status
+          </button>
+
+          <button class="tab-btn" onclick="switchLibrarianTab('weekly')">
+            <i class="material-icons">assessment</i>
+            Weekly Report
+          </button>
+
+          <button class="tab-btn" onclick="switchLibrarianTab('monthly')">
+            <i class="material-icons">bar_chart</i>
+            Monthly Report
+          </button>
+        </div>
+
+        <section class="search-input-field">
+          <i class="material-icons" id="librarianSearchIcon">search</i>
+
+          <input
+            type="text"
+            id="librarianSearchInput"
+            placeholder="Search book titles, authors, ISBN numbers..."
+            autocomplete="off"
+          />
+        </section>
+
+      </div>
+
+      <section class="results-display-panel" id="librarianResults">
+        <!-- <p>Select a tab to get started.</p> -->
+      </section>
+
+    </section>
+  </section>
+</main>
+
+
+  <footer>
+    <span>Lumina Library - Resource &amp; Member Management System RMMS &copy;</span>
+    <span class="dot">•</span>
+    <span>All Rights Reserved</span>
+    <span class="dot">•</span>
+    <span>2026</span>
+  </footer>
+
+  <script src="librarian.js" defer></script>
+</body>
+</html>
